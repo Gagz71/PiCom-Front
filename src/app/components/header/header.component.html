@@ -1,0 +1,33 @@
+<div class="fixed-top">
+	<div class="collapse" id="navbarToggleExternalContent">
+		<div class="bg-dark p-4">
+			<ul class="navbar-nav me-auto">
+				<li class="nav-item">
+					<a class="nav-link active" href="#">Annonces
+						<span class="visually-hidden">(current)</span>
+					</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#">Features</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#">Pricing</a>
+				</li>
+				<li class="nav-item">
+					<button *ngIf="token" class="btn btn-secondary my-2" (click)="onClickLogout()">Se déconnecter</button>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<nav class="navbar navbar-dark bg-dark">
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+	</nav>
+</div>
+<div class="d-flex flex-column mt-5 mb-5">
+	<img src="../../../assets/images/Webp.net-resizeimage3.png" alt="logo PiCom" class="m-auto">
+	<p class="lead text-center slogan">Votre diffuseur d'annonces publicitaires sur le réseau TCL</p>
+	<!--	<p class="lead text-center text-success">${notification}</p>-->
+
+</div>

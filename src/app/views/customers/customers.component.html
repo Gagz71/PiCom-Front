@@ -1,0 +1,16 @@
+<p>customers works!</p>
+
+<div>{{customers}}</div>
+
+
+	<div *ngFor="let customer of customers" class="card mb-3 h-100">
+		<div class="row g-0">
+			<div class="col-md-6">
+				<div class="card-body">
+					<p class="card-text">{{customer.lastname}} {{customer.firstname}} {{customer.email}}</p>
+				</div>
+			</div>
+		</div>
+	</div>
+
+

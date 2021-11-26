@@ -1,0 +1,47 @@
+<div class="row mb-5">
+
+	<div *ngIf="advert" class="col-6 card shadow m-auto">
+		<div class="card-header bg-transparent">
+			Annonce n°{{advert.id}}
+		</div>
+		<div class="card-body">
+			{{advert.content}}
+		</div>
+
+		<h3 class="card-title">Informations:</h3>
+
+		<div class="card-body">
+
+			<p class="card-text">Annonce crée le : <span class="text-info">{{advert.creationDate | date:'longDate'}}</span> </p>
+			<p class="card-text">
+				Date de diffusion de l'annonce: <span class="text-info"> du {{advert.startDate | date:'longDate' }} au {{advert.endDate | date:'longDate'}}</span></p>
+		</div>
+
+		<div class="card-body">
+			<h5 class="card-title">Zones de diffusion:</h5>
+			<div class="text-info" *ngFor="let zone of advert.zones">
+				<p class="card-text">Zone {{zone.name}} : <span *ngFor="let arret of zone.arrets">
+					Arrêt de {{arret.type}} :  {{arret.name}}
+				</span></p>
+
+			</div>
+		</div>
+
+		<div class="card-body slots">
+			<h5 class="card-title">Tranches Horaires:</h5>
+			<div class="text-info" *ngFor="let slot of advert.slots">{{slot.start}}H-{{slot.end}}H  </div>
+		</div>
+
+
+		</div>
+		<div class="card-footer text-muted border-0 bg-white text-end">
+
+		</div>
+
+		<hr>
+
+		<div class="d-flex justify-content-end">
+			<a class="btn btn-warning mx-1">MODIFIER</a>
+			<a routerLink="/adverts" class="btn btn-outline-dark mx-1">RETOUR</a>
+		</div>
+	</div>

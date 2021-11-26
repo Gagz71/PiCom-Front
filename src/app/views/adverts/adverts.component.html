@@ -1,0 +1,32 @@
+<div class="row mb-5">
+
+	<h1 class="display-5 text-secondary text-uppercase text-center">Liste de mes annonces</h1>
+
+		<div class="card-deck d-flex mt-5" *ngIf="adverts.length > 0">
+			<div *ngFor="let advert of adverts" class="col-4 offset-1 card card-advert shadow border-secondary" style="max-width: 20rem;" [routerLink]="['/adverts', advert.id]">
+				<div class="card-header bg-transparent">Annonce créée le {{advert.creationDate | date}}</div>
+				<div class="card-body">
+					<h4 class="card-title">{{advert.content}}</h4>
+					<p class="card-text">Zones de diffusion: </p>
+
+
+
+				</div>
+				<div class="card-footer bg-transparent d-flex flex-column">
+					<small class="text-muted">Début de diffusion: {{advert.startDate | date}}</small>
+					<small class="text-muted">Fin de diffusion: {{advert.endDate | date}}</small>
+
+				</div>
+				<ul *ngFor="let zone of advert.zones">
+					<li>{{zone.name}}</li>
+				</ul>
+			</div>
+		</div>
+
+
+</div>
+
+
+
+
+
