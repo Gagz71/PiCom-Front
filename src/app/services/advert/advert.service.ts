@@ -26,20 +26,20 @@ export class AdvertService {
 //Création fonction qui récupère les offres
 
 
-	getAdvertsByCustomer(userEMail: string): void {
+	getAdvertsByCustomer(userEMail: string): Promise<AdvertModel> {
 
 		let  headers = new HttpHeaders();
 		headers = headers.append('Authorization', this.authService.token.getValue());
 
-		 this.http
+		 return this.http
 				.get('http://localhost:8080/api/customer/' + userEMail + '/adverts', {headers})
 				.pipe(
 					map((data: any) => data.map((advertAsJson: any) => AdvertModel.fromJSON(advertAsJson)))
 				)
-				.toPromise()
-			 .then((adverts: Array<AdvertModel>) => {
+				.toPromise();
+			 /*.then((adverts: Array<AdvertModel>) => {
 				 this.adverts.next(adverts);
-			 });
+			 });*/
 
 	}
 

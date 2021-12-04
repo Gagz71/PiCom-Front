@@ -20,9 +20,10 @@
 		<div class="card-body">
 			<h5 class="card-title">Zones de diffusion:</h5>
 			<div class="text-info" *ngFor="let zone of advert.zones">
-				<p class="card-text">Zone {{zone.name}} : <span *ngFor="let arret of zone.arrets">
-					Arrêt de {{arret.type}} :  {{arret.name}}
-				</span></p>
+				<div class="card-text">Lyon {{zone.name}} :
+					<ul class="list-group list-group-flush" *ngFor="let arret of zone.arrets">
+						<li class="list-group-item">Arrêt de {{arret.type}} :  {{arret.name}}</li>
+					</ul>
 
 			</div>
 		</div>
@@ -45,3 +46,4 @@
 			<a routerLink="/adverts" class="btn btn-outline-dark mx-1">RETOUR</a>
 		</div>
 	</div>
+</div>
